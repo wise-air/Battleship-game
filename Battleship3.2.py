@@ -208,8 +208,7 @@ class Game:
             ship = Ship(ship, 0, 0, 0)
 
             while True:
-
-                Game.clear_screen()
+                
                 player.message.clear()
 
                 x, y, r = player.get_input('ship_setup')
@@ -241,10 +240,6 @@ class Game:
 
     def switch_players(self):
         self.current_player, self.next_player = self.next_player, self.current_player
-
-    @staticmethod
-    def clear_screen():
-        os.system('cls' if os.name == 'nt' else 'clear')
 
 
 class Player:
@@ -457,7 +452,6 @@ if __name__ == '__main__':
                 continue
 
         if game.status == 'game over':
-            Game.clear_screen()
             print(f'Поле с потопленным флотом адмирала {game.next_player.name}:')
             game.next_player.field.draw_field(FieldPart.main)
             print(f'Поле с флотом побеноносного адмирала {game.current_player.name}:')
