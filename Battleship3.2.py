@@ -2,10 +2,9 @@ import os
 from random import randrange
 from random import choice
 
-menu_of_game = ["Запустить игру", "Правила игры", "Об игре", "Завершить игру"]
-
 
 class FieldPart:
+    menu_of_game = ["Запустить игру", "Правила игры", "Об игре", "Завершить игру"]
     main = 'board'
     location = 'location'
     value = 'value'
@@ -368,8 +367,8 @@ class Ship:
 class Menu:
     while True:
 
-        for menu in menu_of_game:
-            print(menu_of_game.index(menu) + 1, '.', menu)
+        for menu in FieldPart.menu_of_game:
+            print(FieldPart.menu_of_game.index(menu) + 1, '.', menu)
         menu = input("Введите Ваш выбор: ")
 
         if menu == '1':
